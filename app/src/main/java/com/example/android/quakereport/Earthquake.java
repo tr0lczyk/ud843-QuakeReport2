@@ -12,10 +12,13 @@ public class Earthquake {
 
     private long myEarthquakeTime;
 
-    public Earthquake(String earthquakePlace, double earthquakeMagnitude, long earthquakeTime){
+    private String myUrl;
+
+    public Earthquake(String earthquakePlace, double earthquakeMagnitude, long earthquakeTime, String url){
         myEarthquakePlace = earthquakePlace;
         myEarthquakeMagnitude = earthquakeMagnitude;
         myEarthquakeTime = earthquakeTime;
+        myUrl = url;
     }
 
     public String getMyEarthquakePlace(){
@@ -28,5 +31,9 @@ public class Earthquake {
 
     public long getMyEarthquakeTime(){
         return myEarthquakeTime;
+    }
+
+    public String getMyUrl(){
+        return myUrl;
     }
 }
