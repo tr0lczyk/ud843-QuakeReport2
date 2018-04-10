@@ -8,11 +8,11 @@ public class Earthquake {
 
     private String myEarthquakePlace;
 
-    private String myEarthquakeMagnitude;
+    private double myEarthquakeMagnitude;
 
-    private String myEarthquakeTime;
+    private long myEarthquakeTime;
 
-    public Earthquake(String earthquakePlace, String earthquakeMagnitude, String earthquakeTime){
+    public Earthquake(String earthquakePlace, double earthquakeMagnitude, long earthquakeTime){
         myEarthquakePlace = earthquakePlace;
         myEarthquakeMagnitude = earthquakeMagnitude;
         myEarthquakeTime = earthquakeTime;
@@ -22,11 +22,11 @@ public class Earthquake {
         return myEarthquakePlace;
     }
 
-    public String getMyEarthquakeMagnitude(){
+    public double getMyEarthquakeMagnitude(){
         return myEarthquakeMagnitude;
     }
 
-    public String getMyEarthquakeTime(){
+    public long getMyEarthquakeTime(){
         return myEarthquakeTime;
     }
 }
