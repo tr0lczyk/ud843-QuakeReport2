@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -97,14 +98,18 @@ public final class QueryUtils {
      */
     private static String readFromStream(InputStream inputStream) throws IOException{
         StringBuilder output = new StringBuilder();
-        if(inputStream != null){
-            InputStreamReader inputStreamReader = new InputStreamReader(inputStream, Charset.forName("UTF-8"));
-            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-            String line = bufferedReader.readLine();
-            while(line != null){
-                output.append(line);
-                line = bufferedReader.readLine();
+        try {
+            if(inputStream != null){
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, Charset.forName("UTF-8"));
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                String line = bufferedReader.readLine();
+                while(line != null){
+                    output.append(line);
+                    line = bufferedReader.readLine();
+                }
             }
+        } catch (UnsupportedEncodingException e1) {
+            e1.printStackTrace();
         }
         return output.toString();
     }
@@ -205,7 +210,7 @@ public final class QueryUtils {
      * Return a list of {@link Earthquake} objects that has been built up from
      * parsing a JSON response.
      */
-    public static ArrayList<Earthquake> extractEarthquakes() {
+    /*public static ArrayList<Earthquake> extractEarthquakes() {
 
         // Create an empty ArrayList that we can start adding earthquakes to
         ArrayList<Earthquake> earthquakes = new ArrayList<>();
@@ -239,6 +244,6 @@ public final class QueryUtils {
 
         // Return the list of earthquakes
         return earthquakes;
-    }
+    }*/
 
 }

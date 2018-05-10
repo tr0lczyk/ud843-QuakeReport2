@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 package com.example.android.quakereport;
+
+import android.app.Activity;
 import android.app.LoaderManager;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.Context;
@@ -24,7 +26,6 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,7 +37,7 @@ import java.util.List;
 import java.net.ConnectException;
 import java.net.NetworkInterface;
 
-public class EarthquakeActivity extends AppCompatActivity implements LoaderCallbacks<List<Earthquake>> {
+public class EarthquakeActivity extends Activity implements LoaderCallbacks<List<Earthquake>> {
 
     /** Adapter for the list of earthquakes */
     private EarthquakeAdapter mAdapter;

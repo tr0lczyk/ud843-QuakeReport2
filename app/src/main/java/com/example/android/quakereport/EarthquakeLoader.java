@@ -6,7 +6,7 @@ import android.util.Log;
 
 import java.util.List;
 
-public class EarthquakeLoader extends AsyncTaskLoader<List<Earthquake>> {
+    public class EarthquakeLoader extends AsyncTaskLoader<List<Earthquake>> {
 
     private static final String LOG_TAG = EarthquakeLoader.class.getName();
 
